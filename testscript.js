@@ -14,7 +14,7 @@
             // let list = [];
              //list.
         }
-        function change(barNo){
+        function change(){
             if (inputValue < 0.1) {
                 alert('Error, Value has to be higher than "1"')
             }else if (inputValue > 10) {
