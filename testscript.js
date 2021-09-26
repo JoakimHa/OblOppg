@@ -10,7 +10,6 @@
             barArrayNR = barNo -1;
             console.log(barArrayNR);
            }
-            show()
             // let list = [];
              //list.
         }
@@ -23,7 +22,6 @@
             else {
                 numbers.splice(barArrayNR, 1, inputValue);
             }
-            show()
         }
         function addBar() {
             if (inputValue > 10) {
@@ -33,9 +31,7 @@
             } else {
                 alert ('Error, Value must be higher than "1"');
             }
-        show()
         }
         function deleteBar(){
            numbers.splice(barArrayNR, 1)
-            show()
         }
