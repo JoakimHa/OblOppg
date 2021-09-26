@@ -15,33 +15,44 @@
         let buttongone = '';
         let ButtonNoVal ='';
         let barArrayNR = '';
+        let barNo;
         
 function show() {} ;
 
 QUnit.test('Velge den stolpen som er valgt', function(assert) {
     chosenBar = 1;
-    let barNo = 1;
-    select(barNo);
+    barNo = 1;
+    select();
 
     assert.equal(chosenBar,'ingen','ChosenBar er blitt definert som "ingen"');
     
   });
   
-  QUnit.test('riktige tall', function(assert) {
+  QUnit.test('riktig stolpe i array og riktig stolpe blir valgt', function(assert) {
       
-    chosenBar = 1;
-    let barNo = 2;
-    select(barNo);
+    chosenBar = 4;
+    barNo = 2;
+    const expected = 1;
+    testselect();
 
-    assert.equal(chosenBar,2,'ChosenBar er blitt definert som "ingen"');
+    assert.equal(barArrayNR,expected,'arrayet har riktig stolpe valgt"');
   });
   QUnit.test('change', function(assert) {
-     // inputValue = 1;
-      numbers = [1, 4];
-      barArrayNR = 4;
-      change(barArrayNR);
-      assert.equal(numbers[1],barArrayNR,'ChosenBar er blitt definert som "ingen"');
+      inputValue = 1;
+      numbers = [1, 2, 3, 4];
+      barArrayNR = 2;
+      change();
+      assert.equal(numbers[barArrayNR],inputValue,'Baren har blitt endret');
     });
+    QUnit.test('delete', function(assert) {
+     // inputValue = 1;
+      numbers = [1, 2, 3, 4];
+      barArrayNR = 1;
+      const expected = 3;
+      deleteBar()
+      assert.equal(numbers.length, expected,'Baren har blitt fjernet fra Arrayet"');
+    });
+
   </script>
   
 </body>
