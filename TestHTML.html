@@ -5,9 +5,9 @@
 <body>
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
-  <script src="testscript.js"></script>
+  <script src="controller.js"></script>
   <script src="https://code.jquery.com/qunit/qunit-2.17.1.js"></script>
-  
+
   <script>
         let numbers = [];
         let chosenBar = '';
@@ -33,7 +33,7 @@ QUnit.test('Velge den stolpen som er valgt', function(assert) {
     chosenBar = 4;
     barNo = 2;
     const expected = 1;
-    testselect();
+    select();
 
     assert.equal(barArrayNR,expected,'arrayet har riktig stolpe valgt"');
   });
@@ -47,10 +47,10 @@ QUnit.test('Velge den stolpen som er valgt', function(assert) {
     QUnit.test('delete', function(assert) {
      // inputValue = 1;
       numbers = [1, 2, 3, 4];
-      barArrayNR = 1;
-      const expected = 3;
+      barArrayNR = 0;
+      const expected = [2, 3 ,4];
       deleteBar()
-      assert.equal(numbers.length, expected,'Baren har blitt fjernet fra Arrayet"');
+      assert.deepEqual(numbers, expected,'Den valgte baren "1" har blitt fjærnet fra arrayet');
     });
 
   </script>
